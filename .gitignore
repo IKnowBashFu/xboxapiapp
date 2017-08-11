@@ -1,0 +1,6 @@
+.vs/
+packages/
+Releases/
+*.nupkg
+XBoxAPIApp/bin/
+XBoxAPIApp/obj
