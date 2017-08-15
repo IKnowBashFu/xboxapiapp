@@ -61,8 +61,8 @@
 			// 
 			// button1
 			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.Location = new System.Drawing.Point(197, 204);
+			this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.button1.Location = new System.Drawing.Point(197, 180);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 2;
@@ -74,7 +74,7 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(12, 76);
+			this.label2.Location = new System.Drawing.Point(12, 65);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(66, 20);
 			this.label2.TabIndex = 3;
@@ -83,7 +83,7 @@
 			// apikeyBox
 			// 
 			this.apikeyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.apikeyBox.Location = new System.Drawing.Point(13, 100);
+			this.apikeyBox.Location = new System.Drawing.Point(13, 88);
 			this.apikeyBox.Name = "apikeyBox";
 			this.apikeyBox.Size = new System.Drawing.Size(259, 26);
 			this.apikeyBox.TabIndex = 4;
@@ -92,7 +92,7 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(12, 146);
+			this.label3.Location = new System.Drawing.Point(12, 121);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(172, 20);
 			this.label3.TabIndex = 5;
@@ -101,7 +101,7 @@
 			// pollrateBox
 			// 
 			this.pollrateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.pollrateBox.Location = new System.Drawing.Point(12, 170);
+			this.pollrateBox.Location = new System.Drawing.Point(12, 144);
 			this.pollrateBox.Maximum = new decimal(new int[] {
             120,
             0,
@@ -118,7 +118,7 @@
 			// 
 			// fileButton
 			// 
-			this.fileButton.Location = new System.Drawing.Point(13, 204);
+			this.fileButton.Location = new System.Drawing.Point(12, 180);
 			this.fileButton.Name = "fileButton";
 			this.fileButton.Size = new System.Drawing.Size(88, 23);
 			this.fileButton.TabIndex = 7;
@@ -130,7 +130,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(284, 239);
+			this.ClientSize = new System.Drawing.Size(284, 208);
 			this.Controls.Add(this.fileButton);
 			this.Controls.Add(this.pollrateBox);
 			this.Controls.Add(this.label3);

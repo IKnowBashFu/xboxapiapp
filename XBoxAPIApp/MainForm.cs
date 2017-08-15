@@ -4,8 +4,6 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
-using System.Reflection;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace XBoxAPIApp
@@ -115,19 +113,26 @@ namespace XBoxAPIApp
 		{
 			if (gamertagBox.Text != "" || apikeyBox.Text == "" || pollrateBox.Value == 0 || Global.FilePath == "")
 			{
-				string xuid = Api.GetUserId(gamertagBox.Text, apikeyBox.Text);
-				logger.Debug("After saving settings, Xuid is: " + xuid);
-				Config.WriteConfigFile(gamertagBox.Text, apikeyBox.Text, (int)pollrateBox.Value, xuid, Global.FilePath);
-				Config.ReadConfigFile();
+				XuidInfo xuid = Api.GetUserId(gamertagBox.Text, apikeyBox.Text);
+				if (xuid.success)
+				{
+					logger.Debug("After saving settings, Xuid is: " + xuid);
+					Config.WriteConfigFile(gamertagBox.Text.Trim(), apikeyBox.Text.Trim(), (int)pollrateBox.Value, xuid.xuid, Global.FilePath);
+					Config.ReadConfigFile();
 
-				WriteGamerScore();
+					WriteGamerScore();
 
-				InitTimer();
+					InitTimer();
 
-				this.Hide();
-				myNotifyIcon.BalloonTipTitle = "Running in the background...";
-				myNotifyIcon.BalloonTipText = "Right-click the XBox icon in your system tray to exit or show the configuration window.";
-				myNotifyIcon.ShowBalloonTip(5000);
+					this.Hide();
+					myNotifyIcon.BalloonTipTitle = "Running in the background...";
+					myNotifyIcon.BalloonTipText = "Right-click the XBox icon in your system tray to exit or show the configuration window.";
+					myNotifyIcon.ShowBalloonTip(5000);
+				}
+				else
+				{
+					MessageBox.Show(xuid.error);
+				}
 			}
 			else
 			{
@@ -179,10 +184,12 @@ namespace XBoxAPIApp
 		{
 			if (Api.GetGamerScore())
 			{
+				logger.Debug("Writing gamerscore.txt to: " + Config.FilePath + "\\gamerscore.txt");
 				StreamWriter writer = new StreamWriter(Config.FilePath + "\\gamerscore.txt");
 				writer.Write(Global.GamerScore);
 				writer.Close();
 				writer.Dispose();
+				logger.Debug("Writing complete. File should be in selected folder.");
 			}
 		}
 
@@ -196,6 +203,7 @@ namespace XBoxAPIApp
 			if (folderDialog.ShowDialog() == DialogResult.OK)
 			{
 				Global.FilePath = folderDialog.SelectedPath;
+				logger.Debug("File path selected: " + Global.FilePath);
 			}
 		}
 

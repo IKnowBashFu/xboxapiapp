@@ -28,5 +28,10 @@ namespace XBoxAPIApp
 		{
 			System.Diagnostics.Process.Start("http://www.iknowbashfu.com/");
 		}
+
+		private void AboutForm_Load(object sender, EventArgs e)
+		{
+			versionLabel.Text = "Version " + ProductVersion.ToString();
+		}
 	}
 }

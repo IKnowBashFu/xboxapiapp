@@ -33,6 +33,7 @@
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.label2 = new System.Windows.Forms.Label();
 			this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+			this.versionLabel = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -47,7 +48,7 @@
 			// linkLabel1
 			// 
 			this.linkLabel1.AutoSize = true;
-			this.linkLabel1.Location = new System.Drawing.Point(17, 37);
+			this.linkLabel1.Location = new System.Drawing.Point(13, 37);
 			this.linkLabel1.Name = "linkLabel1";
 			this.linkLabel1.Size = new System.Drawing.Size(46, 20);
 			this.linkLabel1.TabIndex = 1;
@@ -58,7 +59,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(60, 37);
+			this.label2.Location = new System.Drawing.Point(55, 37);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(36, 20);
 			this.label2.TabIndex = 2;
@@ -67,7 +68,7 @@
 			// linkLabel2
 			// 
 			this.linkLabel2.AutoSize = true;
-			this.linkLabel2.Location = new System.Drawing.Point(93, 37);
+			this.linkLabel2.Location = new System.Drawing.Point(88, 37);
 			this.linkLabel2.Name = "linkLabel2";
 			this.linkLabel2.Size = new System.Drawing.Size(91, 20);
 			this.linkLabel2.TabIndex = 3;
@@ -75,11 +76,21 @@
 			this.linkLabel2.Text = "My Website";
 			this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
 			// 
+			// versionLabel
+			// 
+			this.versionLabel.AutoSize = true;
+			this.versionLabel.Location = new System.Drawing.Point(13, 60);
+			this.versionLabel.Name = "versionLabel";
+			this.versionLabel.Size = new System.Drawing.Size(51, 20);
+			this.versionLabel.TabIndex = 4;
+			this.versionLabel.Text = "label3";
+			// 
 			// AboutForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(256, 72);
+			this.ClientSize = new System.Drawing.Size(256, 84);
+			this.Controls.Add(this.versionLabel);
 			this.Controls.Add(this.linkLabel2);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.linkLabel1);
@@ -89,6 +100,7 @@
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "AboutForm";
 			this.Text = "About";
+			this.Load += new System.EventHandler(this.AboutForm_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -100,5 +112,6 @@
 		private System.Windows.Forms.LinkLabel linkLabel1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.LinkLabel linkLabel2;
+		private System.Windows.Forms.Label versionLabel;
 	}
 }
